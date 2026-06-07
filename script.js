@@ -38,11 +38,13 @@ const itemCopy = {
     "Surround yourself with the best people you know, if possible organize the gatherings yourself",
     "Are you your own RDF?",
     "Iterate iterate iterate",
+    "If you do what everybody else is doing how can you expect a different outcome",
   ],
   "life letter box": [
     "Did you know everybody eats sleeps and drinks",
     "Where do you locate in the work-life spectrum? You will soon have to decide where your boundarsies lie",
     "Would you project your head into a robot to overcome physical limitations (intolerances, hunger ecc)?",
+    "Everyone assumes AI will inherit humanity's greed, lust for power, and envy.\n\nBut what if those are products of evolution, not intelligence?\n\nWhat if peace is the rational endpoint?",
   ],
   gecko:
     "This is Jerry. I bought him when I was 16 and built him an enclosure.\n\nJerry later escaped. I installed traps with crickets all over my place to catch him, but it didn't work out. While talking to the breeder to buy a new Jerry, I had the epiphany to check in a tiny space on top of the corridor.\n\nFrom that day on until age 18, I owned Jerry 1.0 and Jerry 2.0, two male crested geckos.",
