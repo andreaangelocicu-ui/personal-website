@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Work / Life</title>
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css?v=merende-hitbox-1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="stage" aria-label="Interactive work to life transition">
+      <section class="scene scene-work" aria-label="Work setting">
+        <img class="scene-bg" src="assets/uva-addons-tennine-fixed.webp" alt="" />
+        <div class="tennine-building-sign" aria-hidden="true">TenNine</div>
+        <div class="ambient-layer work-ambient" aria-hidden="true">
+          <span class="ambient-piece work-tree"></span>
+          <span class="ambient-piece work-tree-tips"></span>
+          <span class="ambient-piece work-distant-trees"></span>
+          <span class="ambient-piece work-right-tree"></span>
+          <span class="ambient-piece work-right-tree-tips"></span>
+          <span class="ambient-piece work-shrubs"></span>
+          <span class="ambient-piece work-tulips-ambient"></span>
+        </div>
+        <div class="work-items" aria-label="Explore work items">
+          <button class="work-item work-uva-sign" type="button" data-item="university sign" aria-label="Explore university sign" aria-pressed="false"></button>
+          <button class="work-item work-letterbox" type="button" data-item="work letter box" data-label="Letter box" aria-label="Explore letter box" aria-pressed="false"></button>
+          <button class="work-item work-tulips" type="button" data-item="tulips" data-label="Tulip" aria-label="Explore Tulip" aria-pressed="false"></button>
+          <button class="work-item work-camera" type="button" data-item="camera" data-label="Work camera" aria-label="Explore camera" aria-pressed="false"></button>
+          <button class="work-item work-tennine" type="button" data-item="TenNine sign" aria-label="Explore TenNine sign" aria-pressed="false"></button>
+        </div>
+      </section>
+
+      <section class="scene scene-life" aria-label="Informal setting">
+        <img class="scene-bg" src="assets/bridge-addons-structural.webp" alt="" />
+        <div class="ambient-layer life-ambient" aria-hidden="true">
+          <span class="ambient-piece life-tree-left"></span>
+          <span class="ambient-piece life-tree-left-tips"></span>
+          <span class="ambient-piece life-distant-trees"></span>
+          <span class="ambient-piece life-tree-right"></span>
+          <span class="ambient-piece life-tree-right-tips"></span>
+          <span class="ambient-piece life-bush-left"></span>
+          <span class="ambient-piece life-bush-right"></span>
+          <span class="ambient-piece life-flowers"></span>
+          <span class="ambient-piece life-flower-tips"></span>
+        </div>
+        <div class="plane-hotspot">
+          <img class="scene-plane" src="assets/plane.webp?v=transparent-plane-1" alt="" />
+          <button class="life-item item-plane" type="button" data-item="plane" aria-label="Explore plane" aria-pressed="false"></button>
+        </div>
+        <div class="speech-bubble">Click around to explore my life!</div>
+        <div class="life-items" aria-label="Explore hidden items">
+          <button class="life-item item-letterbox" type="button" data-item="life letter box" data-label="Letter box" aria-label="Explore letter box" aria-pressed="false"></button>
+          <button class="life-item item-merende" type="button" data-item="Merende Funeste" data-label="Merende Funeste" aria-label="Explore Merende Funeste" aria-pressed="false"></button>
+          <button class="life-item item-nintendo" type="button" data-item="Nintendo 3DS XL" aria-label="Explore Nintendo 3DS XL" aria-pressed="false"></button>
+          <button class="life-item item-gecko" type="button" data-item="gecko" aria-label="Explore gecko" aria-pressed="false"></button>
+          <button class="life-item item-camera" type="button" data-item="photo camera" data-label="Life camera" aria-label="Explore photo camera" aria-pressed="false"></button>
+          <button class="life-item item-sign" type="button" data-item="bridge support tower" aria-label="Explore bridge support tower" aria-pressed="false"></button>
+        </div>
+      </section>
+
+      <div class="cloud-layer" aria-hidden="true">
+        <div class="cloud-side cloud-left"></div>
+        <div class="cloud-side cloud-right"></div>
+        <img class="cloud-closed" src="assets/clouds-closed.webp" alt="" />
+      </div>
+
+      <nav class="topbar" aria-label="State slider">
+        <button class="nav-label nav-work" type="button" data-target="0" aria-label="Work">
+          <span class="nav-text">Work</span>
+        </button>
+        <div class="slider-wrap" role="slider" aria-label="Move between work and life" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" tabindex="0">
+          <span class="sr-only">Move between work and informal</span>
+          <input id="stateSlider" type="range" min="0" max="100" value="100" tabindex="-1" aria-hidden="true" />
+        </div>
+        <button class="nav-label nav-life" type="button" data-target="100" aria-label="Life">
+          <span class="nav-text">Life</span>
+        </button>
+      </nav>
+
+      <aside class="found-counter" aria-live="polite">
+        <span id="foundCount">0</span>/7 explored
+      </aside>
+
+      <aside class="work-counter" aria-live="polite">
+        <span id="workFoundCount">0</span>/5 explored
+      </aside>
+
+      <section class="os-window is-hidden" aria-hidden="true" aria-label="Andrea OS window">
+        <div class="os-window__backdrop" data-close-os></div>
+        <div class="os-window__panel" role="dialog" aria-modal="true" aria-labelledby="osWindowTitle">
+          <header class="os-window__titlebar">
+            <h2 class="os-window__title" id="osWindowTitle">Andrea OS</h2>
+            <button class="os-window__close" type="button" aria-label="Close Andrea OS" data-close-os>×</button>
+          </header>
+          <div class="os-window__body">
+            <div class="os-window__copy">
+              <div class="os-window__item-row">
+                <p class="os-window__item" id="osWindowItem">Loading...</p>
+                <p class="os-window__tagline" id="osWindowTagline" hidden>I cannot write essays, so I will write messages</p>
+              </div>
+              <div class="os-window__text" id="osWindowText">
+              </div>
+              <div class="os-window__map" id="osWindowMap" hidden>
+                <div class="os-window__map-view">
+                  <img src="assets/world-map.svg?v=france-covered-1" alt="World map with covered countries highlighted in light green" />
+                </div>
+                <p class="os-window__map-label">Spawn point: Monza, Italy</p>
+                <p class="os-window__map-stat">11,469,745 km2 covered. 7.7% of Earth's land explored, much more to come...</p>
+              </div>
+              <div class="os-window__phone" aria-label="Message thread" hidden>
+                <div class="os-window__phone-top">
+                  <span>Inbox</span>
+                  <span>Andrea</span>
+                </div>
+                <div class="os-window__messages" id="osWindowMessages"></div>
+              </div>
+              <div class="os-window__camera-roll" id="osWindowCameraRoll" aria-label="Camera roll" hidden></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section class="photo-lightbox is-hidden" id="photoLightbox" aria-hidden="true" aria-label="Expanded photo">
+      <button class="photo-lightbox__backdrop" type="button" aria-label="Close expanded photo" data-close-photo></button>
+      <div class="photo-lightbox__frame" role="dialog" aria-modal="true">
+        <button class="photo-lightbox__close" type="button" aria-label="Close expanded photo" data-close-photo>×</button>
+        <img id="photoLightboxImage" alt="" />
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
